@@ -1,0 +1,20 @@
+{
+	"private": true,
+	"scripts": {
+		"dev": "concurrently -n server,web -c blue,magenta \"DOTENV_CONFIG_PATH=$PWD/.env pnpm --filter @papert-claw/server dev\" \"pnpm --filter @papert-claw/web dev\"",
+		"build": "pnpm -r build",
+		"lint": "biome check .",
+		"format": "biome format . --write",
+		"typecheck": "pnpm -r typecheck",
+		"test": "pnpm -r test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.0",
+		"concurrently": "^9.2.1",
+		"tsx": "^4.19.0",
+		"typescript": "^5.7.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["better-sqlite3", "@biomejs/biome", "esbuild"]
+	}
+}

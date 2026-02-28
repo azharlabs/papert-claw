@@ -1,0 +1,36 @@
+{
+	"name": "@papert-claw/server",
+	"version": "0.2.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "tsx --watch src/index.ts",
+		"build": "tsdown src/index.ts --format esm --out-dir dist",
+		"start": "node dist/index.js",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run --passWithNoTests",
+		"test:watch": "vitest"
+	},
+	"dependencies": {
+		"@papert-code/sdk-typescript": "file:../../../papert-code/packages/sdk-typescript",
+		"@hapi/boom": "^10.0.1",
+		"@hono/node-server": "^1.19.9",
+		"@papert-claw/shared": "workspace:*",
+		"@slack/bolt": "^4.6.0",
+		"@whiskeysockets/baileys": "7.0.0-rc.9",
+		"better-sqlite3": "^12.6.2",
+		"dotenv": "^17.3.1",
+		"hono": "^4.11.9",
+		"kysely": "^0.28.11",
+		"pino": "^10.3.1",
+		"pino-pretty": "^13.1.3",
+		"zod": "^4.3.6"
+	},
+	"devDependencies": {
+		"@types/better-sqlite3": "^7.6.13",
+		"@types/node": "^25.2.3",
+		"tsdown": "^0.14.0",
+		"tsx": "^4.19.0",
+		"vitest": "^4.0.18"
+	}
+}

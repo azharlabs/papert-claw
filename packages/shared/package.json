@@ -1,0 +1,14 @@
+{
+	"name": "@papert-claw/shared",
+	"version": "0.2.0",
+	"private": true,
+	"type": "module",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "tsdown src/index.ts --format esm --out-dir dist --dts",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"tsdown": "^0.14.0"
+	}
+}
